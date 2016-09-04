@@ -8,7 +8,7 @@ public interface ILoginView {
     /**
      * 显示loading框
      */
-    public void showProcess(final boolean show);
+    public void showLoginProcessingState(final boolean processingOrProcessed);
 
     /**
      * 显示错误信息
@@ -16,10 +16,10 @@ public interface ILoginView {
      * @param devMsg      技术性提示信息
      * @param friendlyMsg 用户提示信息
      */
-    public void showErrorInfo(int code, String devMsg, String friendlyMsg);
+    public void ShowErrorMsg(int code, String devMsg, String friendlyMsg);
 
     /**
      * 处理登录成功
      */
-    public void loginSuc();
+    public void loginSuccessful();
 }

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.mvpteach.liuguangli.mvpteach.R;
+
 import taichu.mobi.android.framework.vcad.demo.unit.login.controller.LoginController;
 import taichu.mobi.android.framework.vcad.demo.unit.login.controller.ILoginController;
 
@@ -43,9 +44,7 @@ public class LoginView extends AppCompatActivity  implements ILoginView {
             }
         });
         mLoginController = new LoginController(this);
-
     }
-
 
     /**
      * 提交登录
@@ -93,29 +92,23 @@ public class LoginView extends AppCompatActivity  implements ILoginView {
      * @param friendlyMsg 用户提示信息
      */
     @Override
-    public void showErrorInfo(int code, String devMsg, String friendlyMsg) {
-
-    }
+    public void ShowErrorMsg(int code, String devMsg, String friendlyMsg) { /*待实现*/ }
 
     /**
      * 登录成功
      */
     @Override
-    public void loginSuc() {
-
-    }
+    public void loginSuccessful() {/*待实现*/}
 
     /**
      *  显示进度
      */
     @Override
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
-    public void showProcess(final boolean show) {
-        mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-        mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+    public void showLoginProcessingState(final boolean processingOrProcessed) {
+        mProgressView.setVisibility(processingOrProcessed ? View.VISIBLE : View.GONE);
+        mLoginFormView.setVisibility(processingOrProcessed ? View.GONE : View.VISIBLE);
     }
-
-
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
@@ -126,12 +119,6 @@ public class LoginView extends AppCompatActivity  implements ILoginView {
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
-
-
-
-
-
-
 
 }
 
